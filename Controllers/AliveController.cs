@@ -1,5 +1,7 @@
+using CQDT.CloudClient;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
+using Newtonsoft.Json;
 
 namespace CloudMiddleService.Controllers
 {
@@ -20,9 +22,18 @@ namespace CloudMiddleService.Controllers
         {
             return new
             {
-                Settings = _mySettings.Pubsubs,
+#if DEBUG
+                Settings = _mySettings.PubSub,
+#endif
                 Now = DateTime.Now
             };
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Post([FromBody] object data)
+        {
+            Console.WriteLine($"Received data: {data}");
+            return Ok();
         }
     }
 }

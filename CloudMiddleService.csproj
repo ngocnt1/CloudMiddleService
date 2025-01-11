@@ -10,7 +10,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="CQDT.CloudClient" Version="1.7.1" />
+    <Content Remove="appsettings.Development.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CQDT.CloudClient" Version="1.7.2" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="9.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.0" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.21.0" />

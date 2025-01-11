@@ -28,8 +28,7 @@ namespace CloudMiddleService
             // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
             builder.Services.AddOpenApi();
 
-            //Add background service
-            builder.Services.AddHostedService<SimpleServices>();
+            //Add background service            
             AddCustomServices(builder.Services);
             
 
@@ -61,7 +60,6 @@ namespace CloudMiddleService
 
             app.UseAuthorization();
 
-
             app.MapControllers();
 
             app.UseCors();
@@ -70,9 +68,16 @@ namespace CloudMiddleService
         }
 
 
-        static void AddCustomServices(IServiceCollection collection)
+        /// <summary>
+        /// Custom service registration
+        /// </summary>
+        /// <param name="provider"></param>
+        static void AddCustomServices(IServiceCollection provider)
         {
-            collection.AddHostedService<ServiceA>();
+            provider.AddHostedService<SimpleServices>();
+
+            //Add your custom service below
+           // provider.AddHostedService<ServiceA>();
         }
     }
 }

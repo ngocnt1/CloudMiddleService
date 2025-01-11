@@ -19,7 +19,7 @@ namespace CloudMiddleService
 
         public int IntervalSeconds { get; set; }
 
-        public PubsubSetting Pubsubs { get; set; }
+        public PubsubSetting PubSub { get; set; }
     }
 
     public class PubsubSetting
@@ -31,24 +31,19 @@ namespace CloudMiddleService
     public class PubsubConfig {
        
         public string Topic { get; set; }
-        public string ExecuteUrl { get; set; }
-        /// <summary>
-        /// 0: Get; 1: PUT,2:Delete, 3:Post
-        /// </summary>
-        public HttpMethods  ExecuteMethod { get; set; }
-        public string CallbackUrl { get; set; }
-        public HttpMethods CallbackMethod { get; set; }
+        public string ExecuteApi { get; set; }        
+        
+        public string ForwardUrl { get; set; }
+        public string ForwardAuthKey { get; set; }
     }
 
     public class PostModel
-    {
-        public string Url { get; set; }
+    {        
         public string ApiMethod { get; set; }
         public object? Body { get; set; }
 
         public PostModel()
-        {
-            Url = string.Empty;
+        {            
             ApiMethod = string.Empty;
             Body = null;
         }
