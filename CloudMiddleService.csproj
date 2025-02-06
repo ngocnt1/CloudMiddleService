@@ -7,6 +7,10 @@
     <UserSecretsId>7e2a4a4e-8e99-460c-86a1-5e04c2e29e84</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
     <DockerfileContext>.</DockerfileContext>
+    <Title>Cloud Connect Middle Service</Title>
+    <Company>CQS</Company>
+    <Product>Cloud Connect Solution</Product>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>
