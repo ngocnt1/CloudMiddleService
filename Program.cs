@@ -26,7 +26,7 @@ namespace CloudMiddleService
 
             builder.Services.AddControllers();
             // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-            builder.Services.AddOpenApi();
+           // builder.Services.AddOpenApi();
 
             //Add background service            
             AddCustomServices(builder.Services);
@@ -50,7 +50,7 @@ namespace CloudMiddleService
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {
-                app.MapOpenApi();
+              //  app.MapOpenApi();
             }
 
             if (settings?.HttpsForce == true)
